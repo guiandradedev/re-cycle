@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
+            $table->string('trading_name');
+            $table->string('document')->unique();
+            $table->string('slug')->unique();
+            $table->foreignId('owner_id')->nullable()->constrained(
+                table: 'users', indexName: 'companies_owner_id'     
+            );
+            // $table->string('');
+            // $table->string('');
+            // $table->string('');
+            // $table->string('');
             $table->timestamps();
         });
     }
