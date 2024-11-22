@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Deposits;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,7 +17,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             CompanySeeder::class,
+            CollectionPointSeeder::class,
+            DepositSeeder::class
         ]);
+        
         // User::factory(10)->create();
 
         // User::factory()->create([
